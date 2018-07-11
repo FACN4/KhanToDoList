@@ -24,6 +24,8 @@ var todoFunctions = {
   },
 
   addTodo: function(todos, newTodo) {
+
+
     // var newArr = cloneArrayOfObjects(todos);
     // newTodo["id"] = generateId();
     // newTodo["done"] = false;
