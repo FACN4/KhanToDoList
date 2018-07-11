@@ -23,22 +23,26 @@ var todoFunctions = {
     });
   },
 
-  addTodo: function(todos, newTodo) {
 
 
-    // var newArr = cloneArrayOfObjects(todos);
-    // newTodo["id"] = generateId();
-    // newTodo["done"] = false;
-    // return newArr.push(newTodo);
+  addTodo: function(todos, descrip) {
     // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
     // returns a new array, it should contain todos with the newTodo added to the end.
     // add an id to the newTodo. You can use the generateId function to create an id.
     // hint: array.concat
+    var NewtoDo = [{id: todoFunctions.generateId() , description: descrip, done:false}];
+    var tempToDo = todoFunctions.cloneArrayOfObjects(todos);
+    return tempToDo.concat(NewtoDo);
   },
   deleteTodo: function(todos, idToDelete) {
     // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
     // return a new array, this should not contain any todo with an id of idToDelete
     // hint: array.filter
+    //var NewtoDo = [{id: todoFunctions.generateId() , description: descrip, done:false}];
+      var tempToDo = todoFunctions.cloneArrayOfObjects(todos);
+      return tempToDo.filter(val =>{
+      return val.id !== idToDelete;
+     });
   },
   markTodo: function(todos, idToMark) {
     //
@@ -51,6 +55,14 @@ var todoFunctions = {
     // in the new todo array, all elements will remain unchanged except the one with id: idToMark
     // this element will have its done value toggled
     // hint: array.map
+
+    var tempToDo = todoFunctions.cloneArrayOfObjects(todos);
+    return  tempToDo.map(val =>{
+      if(idToMark === val.id ){
+        val.done = !val.done;
+      }
+      return val;
+    });
   },
   sortTodos: function(todos, sortFunction) {
     // stretch goal! Do this last
