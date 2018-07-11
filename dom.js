@@ -6,11 +6,7 @@
   var container = document.getElementById("todo-container");
   var addTodoForm = document.getElementById("add-todo");
 
-  var state = [
-    { id: -3, description: "first todo", done:true },
-    { id: -2, description: "second todo" },
-    { id: -1, description: "third todo" }
-  ]; // this is our initial todoList
+  var state = []; // this is our initial todoList
 
   // This function takes a todo, it returns the DOM node representing that todo
   var createTodoNode = function(todo) {
@@ -36,13 +32,15 @@
 
     // add markTodo button
 
-    var markButtonNode = document.createElement("button");
+    var markButtonNode = document.createElement("input");
+    markButtonNode.setAttribute("type", "checkbox");
     markButtonNode.className = "markbutton";
-    markButtonNode.textContent = "X";
+
     markButtonNode.addEventListener("click", function(event) {
       var newButt = todoFunctions.markTodo(state, todo.id);
       update(newButt);
     });
+    markButtonNode.checked = todo.done;
     todoNode.appendChild(markButtonNode);
 
     // add classes for css
@@ -64,11 +62,7 @@
 
   // you should not need to change this function
   var update = function(newState) {
-
-    if(document.getElementById("sortBtn").checked === true){
-      state = todoFunctions.sortTodos(newState);
-    } else {state = newState;}
-
+    state = newState;
     renderState(state);
   };
 

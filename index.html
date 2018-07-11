@@ -8,24 +8,31 @@
        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>tdd todo</title>
     <link rel="stylesheet" href="./style.css">
+    <link <link href="https://fonts.googleapis.com/css?family=Boogaloo|Source+Sans+Pro" rel="stylesheet">
   </head>
   <body>
     <header>
       <h1>Never Forget Anything</h1>
     </header>
     <section class="tasks-field">
-      <div>
-        <button type="checkbox" id="sortBtn" name="sort" checked></button>
+      <div id="sortButtn">
+        <label>Sort By Done:</label>
+        <label class="switch">
+          <input type="checkbox" checked>
+          <span class="slider round"></span>
+        </label>
       </div>
       <div id = "todo-container">
-          <ul>
-          </ul>
+
       </div>
       <form id="add-todo">
-        <input type="text" name="description" value="" required>
+        <input type="text" name="description" value="" placeholder="Your to-do" required pattern="^(?:\b\S{1,15}\b\s*)+$" title="The maximum word length is 15 letters">
         <input type="submit" name="" value="Submit">
       </form>
     </section>
+    <footer>
+      A Khan Web Developers Production
+    </footer>
   </body>
   <script type="text/javascript" src = "./logic.js"></script>
   <script type="text/javascript" src = "./dom.js"></script>
