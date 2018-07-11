@@ -2,18 +2,27 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <link rel="icon"
+      type="image/png"
+      href="https://user-images.githubusercontent.com/28222381/42564364-3b32635c-8509-11e8-9397-53684e8f2550.png" />
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>tdd todo</title>
     <link rel="stylesheet" href="./style.css">
   </head>
   <body>
-    <div id = "todo-container">
-        <ul>
-        </ul>
-    </div>
-    <form id="add-todo">
-      <input type="text" name="description" value="">
-      <input type="submit" name="" value="Submit">
-    </form>
+    <header>
+      <h1>Never Forget Anything</h1>
+    </header>
+    <section class="tasks-field">
+      <div id = "todo-container">
+          <ul>
+          </ul>
+      </div>
+      <form id="add-todo">
+        <input type="text" name="description" value="">
+        <input type="submit" name="" value="Submit">
+      </form>
+    </section>
   </body>
   <script type="text/javascript" src = "./logic.js"></script>
   <script type="text/javascript" src = "./dom.js"></script>

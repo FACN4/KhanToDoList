@@ -1,3 +1,26 @@
-div{
-  font-size: 10;
+body{
+  background-color: rgb(68, 226, 156);
+  font-size: 16px;
+  margin:0px;
+}
+h1{
+  background-color: white;
+  text-align: center;
+  font-size: 40px;
+  margin:0px;
+  padding: 2% 0% 2% 0%;
+}
+.tasks-field{
+  background-color: rgba(228, 230, 223, 0.86);
+  width: 70%;
+  margin: auto;
+  border-radius: 8px;
+}
+@media only screen and (min-width:480px){
+  .tasks-field{
+    width:45%;
+  }
+  h1{
+    font-size: 60px;
+  }
 }
