@@ -5,6 +5,7 @@
   // This is the dom node where we will keep our todo
   var container = document.getElementById("todo-container");
   var addTodoForm = document.getElementById("add-todo");
+  var sort_switch = document.getElementById("sort-switch");
 
   var state = []; // this is our initial todoList
 
@@ -59,10 +60,18 @@
       update(newState);
     });
   }
+  if (sort_switch) {
+    sort_switch.addEventListener("change", function(event) {
+      console.log("clicked switch!!")
+      update(state);
+    });
+  }
 
   // you should not need to change this function
   var update = function(newState) {
-    state = newState;
+    if(sort_switch.checked){
+      state = todoFunctions.sortTodos(newState);
+    } else {state = newState;}
     renderState(state);
   };
 
