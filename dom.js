@@ -66,7 +66,11 @@
 
   // you should not need to change this function
   var update = function(newState) {
-    state = newState;
+
+    if(document.getElementById("sortBtn").checked === true){
+      state = todoFunctions.sortTodos(newState);
+    } else {state = newState;}
+
     renderState(state);
   };
 
