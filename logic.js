@@ -23,8 +23,9 @@ var todoFunctions = {
     });
   },
 
-  addTodo: function(todos, descrip) {
 
+
+  addTodo: function(todos, descrip) {
     // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
     // returns a new array, it should contain todos with the newTodo added to the end.
     // add an id to the newTodo. You can use the generateId function to create an id.
