@@ -130,3 +130,34 @@ test("Test if generateId returns a unique number", function(t) {
   t.equal(actual, expected, "The function should retun a positive value");
   t.end();
 });
+
+test("test if the array of todos is sorted according Done property",function(t){
+
+  var todos = [
+    {
+      id: 0,
+      description: 'smash avocados',
+      done: true,
+    },
+    {
+      id: 1,
+      description: 'make coffee',
+      done: false,
+    },
+  ];
+  var actual = logic.sortTodos(todos);
+  var expected =  [
+    {
+      id: 1,
+      description: 'make coffee',
+      done: false,
+    },
+    {
+      id: 0,
+      description: 'smash avocados',
+      done: true,
+    },
+  ];
+  t.same(actual, expected, "the function should sort the array :false first");
+  t.end();
+});
