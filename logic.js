@@ -24,7 +24,6 @@ var todoFunctions = {
   },
 
 
-
   addTodo: function(todos, descrip) {
     // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
     // returns a new array, it should contain todos with the newTodo added to the end.
