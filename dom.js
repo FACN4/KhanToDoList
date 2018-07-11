@@ -19,7 +19,9 @@
 
     // add span holding description
     // console.log(todo.descripton);
-    todoNode.innerHTML = todo.description;
+    var spanText = document.createElement("span");
+    spanText.textContent = todo.description;
+    todoNode.appendChild(spanText);
 
     // this adds the delete button
 
@@ -53,24 +55,20 @@
   if (addTodoForm) {
     addTodoForm.addEventListener("submit", function(event) {
       event.preventDefault();
-      // https://developer.mozilla.org/en-US/docs/Web/Events/submit
-      // what does event.preventDefault do?
-      // what is inside event.target?
-
-
-      var description = event.target.firstElementChild.value; // event.target ....
-
-      // hint: todoFunctions.addTodo
-
-      var newState = todoFunctions.addTodo(state,description); // ?? change this!
-
+      var description = event.target.firstElementChild.value;
+      event.target.firstElementChild.value = "";
+      var newState = todoFunctions.addTodo(state,description);
       update(newState);
     });
   }
 
   // you should not need to change this function
   var update = function(newState) {
-    state = newState;
+
+    if(document.getElementById("sortBtn").checked === true){
+      state = todoFunctions.sortTodos(newState);
+    } else {state = newState;}
+
     renderState(state);
   };
 
@@ -87,4 +85,6 @@
   };
 
   if (container) renderState(state);
+
+
 })();

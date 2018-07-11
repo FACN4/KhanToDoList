@@ -14,7 +14,14 @@ li{
   word-wrap: break-word;
   display: grid;
   grid-template-columns: 8fr 1fr 1fr;
-  grid-column-gap: 5px;
+  /* grid-row-gap: 1em;*/
+  border: 1px solid transparent;
+  margin-top: 1px;
+  margin-bottom: 1px;
+}
+ul >li:hover{
+  background-color: #D2691E;
+  border: 0.2px solid rgb(151, 148, 154);
 }
 .tasks-field{
   background-color: rgba(228, 230, 223, 0.86);
