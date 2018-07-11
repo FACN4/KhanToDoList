@@ -18,7 +18,8 @@
     // you will need to use addEventListener
 
     // add span holding description
-    todoNode.innerHTML = todo.descripton;
+    // console.log(todo.descripton);
+    todoNode.innerHTML = todo.description;
 
     // this adds the delete button
 
@@ -36,7 +37,7 @@
       var newButt = todoFunctions.markTodo(state, todo.id);
       update(newButt);
     });
-    todoNode.appendChild(marButtonNode);
+    todoNode.appendChild(markButtonNode);
 
     // add classes for css
 
@@ -47,16 +48,18 @@
   // bind create todo form
   if (addTodoForm) {
     addTodoForm.addEventListener("submit", function(event) {
-
+      event.preventDefault();
       // https://developer.mozilla.org/en-US/docs/Web/Events/submit
       // what does event.preventDefault do?
       // what is inside event.target?
-      event.preventDefault;
+
+
       var description = event.target.firstElementChild.value; // event.target ....
 
       // hint: todoFunctions.addTodo
 
       var newState = todoFunctions.addTodo(state,description); // ?? change this!
+
       update(newState);
     });
   }

@@ -9,17 +9,17 @@ test('Example test', function(t) {
 test('Add new todo to the list ', function(t) {
   var todo = "Brush my hair"
   var todos = [
-  {
-    id: 0,
-    description: 'smash avocados',
-    done: true,
-  },
-  {
-    id: 1,
-    description: 'make coffee',
-    done: false,
-  },
-];
+    {
+      id: 0,
+      description: 'smash avocados',
+      done: true,
+    },
+    {
+      id: 1,
+      description: 'make coffee',
+      done: false,
+    },
+  ];
 var actual =  logic.addTodo(todos,todo).length;
 var expected = 3;
   t.equal(actual,expected,"this fun should increase the size of the arr by 1 ");
@@ -28,24 +28,26 @@ var expected = 3;
 
 test('delete a todo from the list ', function(t) {
   var id = 1;
-  var todos = [
-  {
+  var todos =
+  [
+    {
+      id: 0,
+      description: 'smash avocados',
+      done: true,
+    },
+    {
+      id: 1,
+      description: 'make coffee',
+      done: false,
+    },
+  ];
+  var actual =  logic.deleteTodo(todos, id);
+  var expected = [{
     id: 0,
     description: 'smash avocados',
     done: true,
-  },
-  {
-    id: 1,
-    description: 'make coffee',
-    done: false,
-  },
-];
-var actual =  logic.deleteTodo(todos, id);
-var expected = [{
-  id: 0,
-  description: 'smash avocados',
-  done: true,
-}];
+    }
+  ];
   t.same(actual,expected,"this function  should decrease the size of the arr by 1 ");
   t.end();
 });
@@ -53,30 +55,30 @@ var expected = [{
 test('Mark a todo from the list ', function(t) {
   var id = 0;
   var todos = [
-  {
-    id: 0,
-    description: 'smash avocados',
-    done: true,
-  },
-  {
-    id: 1,
-    description: 'make coffee',
-    done: false,
-  },
-];
-var actual =  logic.markTodo(todos, id);
-var expected = todos = [
-{
-  id: 0,
-  description: 'smash avocados',
-  done: false,
-},
-{
-  id: 1,
-  description: 'make coffee',
-  done: false,
-},
-];
+    {
+      id: 0,
+      description: 'smash avocados',
+      done: true,
+    },
+    {
+      id: 1,
+      description: 'make coffee',
+      done: false,
+    },
+  ];
+  var actual =  logic.markTodo(todos, id);
+  var expected = todos = [
+    {
+      id: 0,
+      description: 'smash avocados',
+      done: false,
+    },
+    {
+      id: 1,
+      description: 'make coffee',
+      done: false,
+    },
+  ];
   t.same(actual,expected,"this function  should return the same todolist with other value of :  done value ");
   t.end();
 });
@@ -106,7 +108,7 @@ test("Testing array of objects copy is equal to the original- cloneArrayOfObject
 });
 
 test("Test cloneArrayOfObjects makes a clone of the array of objects", function(t) {
-var todosTest = [{breakfast: 'porridge', lunch: 'pizza', dinner: 'paella'}];
+  var todosTest = [{breakfast: 'porridge', lunch: 'pizza', dinner: 'paella'}];
   var actual = logic.cloneArrayOfObjects(todosTest);
   actual[0]["breakfast"] = "toast";
   var expected = todosTest;
@@ -114,21 +116,14 @@ var todosTest = [{breakfast: 'porridge', lunch: 'pizza', dinner: 'paella'}];
   t.end();
 });
 
-test("Test add to do function ", function(t) {
-var todo = [{breakfast: 'porridge'}];
-var newTodo = {lunch:'uyg'};
- var expected = [{breakfast: 'porridge'},{lunch:'uyg'}]
-  var actual = logic.addTodo(todo,newTodo);
-  t.same(actual, expected, "The function should retun a clone, not a pointer");
-
 test("Test if generateId returns a unique number", function(t) {
   var arrOfIds = [];
   for (var i = 0; i < 1000; i++) {
     arrOfIds.push(logic.generateId());
   }
   var arrOfIdsLength = arrOfIds.length;
-  var newArr = arrOfIds.filter(function(value, index) {
-    return indexOf(value) === index;
+  var newArr = arrOfIds.filter(function(value, index, arr) {
+    return arr.indexOf(value) === index;
   });
   var actual = logic.generateId() >= 0;
   var expected = true;
