@@ -1,6 +1,8 @@
 # KhanToDoList
 
-FACN4 week 2 project to do list
+FACN4 week 2 project to do list. Please visit our site [here](https://facn4.github.io/KhanToDoList).
+
+README not finished...
 
 How?
 
