@@ -4,7 +4,7 @@
   "description": "FAC week 2 project",
   "main": "index.html",
   "scripts": {
-    "test": "tape test.js | tap-spec"
+    "test": "nyc tape test.js | tap-spec"
   },
   "repository": {
     "type": "git",

@@ -35,7 +35,9 @@ li{
   margin-top: 1px;
   margin-bottom: 1px;
   padding: 2px 4px 2px 4px;
-  word-wrap: break-word;
+}
+li > span{
+  word-break: break-all;
 }
 ul{
   padding-top: 50px;
@@ -80,6 +82,7 @@ ul >li:hover{
   background-color: gray;
   border-radius: 50%;
   color: white;
+  margin-left: 10px;
   padding: 1px 5px 1px 5px;
   text-align: center;
   text-decoration: none;
