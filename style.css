@@ -75,6 +75,7 @@ ul >li:hover{
   background-color: gray;
   border-radius: 50%;
   color: white;
+  margin-left: 10px;
   padding: 1px 5px 1px 5px;
   text-align: center;
   text-decoration: none;
