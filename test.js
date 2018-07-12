@@ -1,5 +1,17 @@
 var test = require("tape");
 var logic = require("./logic");
+var todos = [
+  {
+    id: 0,
+    description: 'smash avocados',
+    done: true,
+  },
+  {
+    id: 1,
+    description: 'make coffee',
+    done: false,
+  },
+];
 
 test('Example test', function(t) {
   t.equal(1,1,"Tape should work");
@@ -8,39 +20,14 @@ test('Example test', function(t) {
 
 test('Add new todo to the list ', function(t) {
   var todo = "Brush my hair"
-  var todos = [
-    {
-      id: 0,
-      description: 'smash avocados',
-      done: true,
-    },
-    {
-      id: 1,
-      description: 'make coffee',
-      done: false,
-    },
-  ];
-var actual =  logic.addTodo(todos,todo).length;
-var expected = 3;
+  var actual =  logic.addTodo(todos,todo).length;
+  var expected = 3;
   t.equal(actual,expected,"this fun should increase the size of the arr by 1 ");
   t.end();
 });
 
 test('delete a todo from the list ', function(t) {
   var id = 1;
-  var todos =
-  [
-    {
-      id: 0,
-      description: 'smash avocados',
-      done: true,
-    },
-    {
-      id: 1,
-      description: 'make coffee',
-      done: false,
-    },
-  ];
   var actual =  logic.deleteTodo(todos, id);
   var expected = [{
     id: 0,
@@ -54,20 +41,8 @@ test('delete a todo from the list ', function(t) {
 
 test('Mark a todo from the list ', function(t) {
   var id = 0;
-  var todos = [
-    {
-      id: 0,
-      description: 'smash avocados',
-      done: true,
-    },
-    {
-      id: 1,
-      description: 'make coffee',
-      done: false,
-    },
-  ];
   var actual =  logic.markTodo(todos, id);
-  var expected = todos = [
+  var expected = [
     {
       id: 0,
       description: 'smash avocados',
@@ -132,19 +107,6 @@ test("Test if generateId returns a unique number", function(t) {
 });
 
 test("test if the array of todos is sorted according Done property",function(t){
-
-  var todos = [
-    {
-      id: 0,
-      description: 'smash avocados',
-      done: true,
-    },
-    {
-      id: 1,
-      description: 'make coffee',
-      done: false,
-    },
-  ];
   var actual = logic.sortTodos(todos);
   var expected =  [
     {
