@@ -71,6 +71,11 @@ ul >li:hover{
   box-shadow: 0 0 3px gray;
 
 }
+.delbutton:hover{
+  background-color:pink;
+
+}
+
 .markbutton{
   background-color: gray;
   border-radius: 50%;
@@ -84,6 +89,7 @@ ul >li:hover{
   box-shadow: 0 0 3px gray;
   background-color: #eee;
 }
+
 /* Form formatting */
 
 #submit-button{
