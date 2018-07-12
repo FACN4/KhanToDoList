@@ -62,7 +62,6 @@
   }
   if (sort_switch) {
     sort_switch.addEventListener("change", function(event) {
-      console.log("clicked switch!!")
       update(state);
     });
   }

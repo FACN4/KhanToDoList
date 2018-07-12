@@ -86,7 +86,26 @@ ul >li:hover{
 }
 /* Form formatting */
 
+#submit-button{
+  background-color: #555555;;
+  color: white;
+  border: none;
+  width: 30%;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
 
+#input-bar{
+  width: 60%;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  border: 1px solid grey;
+    border-radius: 4px;
+}
 
 /* =======Filter Button======= */
 #sortButtn{
